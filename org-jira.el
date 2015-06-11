@@ -402,7 +402,7 @@ See`org-jira-get-issue-list'"
             (let* ((proj-key (cdr (assoc 'project issue)))
                    (issue-id (cdr (assoc 'key issue)))
                    (issue-summary (cdr (assoc 'summary issue)))
-                   (issue-headline issue-summary))
+                   (issue-headline (concat (format "[[%s][%s]] " (concat jiralib-url "/browse/" issue-id) issue-id) issue-summary)))
               (let ((project-file (expand-file-name (concat proj-key ".org") org-jira-working-dir)))
                 (setq project-buffer (or (find-buffer-visiting project-file)
                                          (find-file project-file)))
