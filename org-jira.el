@@ -469,7 +469,7 @@ See`org-jira-get-issue-list'"
 
                                 (insert (replace-regexp-in-string "^" "  " (org-jira-get-issue-val heading-entry issue))))))
                           '(description))
-                    (org-jira-update-comments-for-current-issue)
+;;                    (org-jira-update-comments-for-current-issue)
                     )))))
           issues)
     (switch-to-buffer project-buffer)))
